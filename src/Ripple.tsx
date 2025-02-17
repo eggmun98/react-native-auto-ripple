@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, StyleSheet, ViewStyle } from 'react-native';
+import { View, StyleSheet, ViewStyle, TouchableOpacity } from 'react-native';
 
 interface RippleProps {
+  onPress?: () => void; 
   speed?: number;
   initialDiameter?: number;
   diameter?: number;
@@ -20,6 +21,7 @@ interface RippleItem {
 }
 
 const defaultProps: Required<RippleProps> = {
+  onPress: () => {},
   speed: 10,
   initialDiameter: 0,
   diameter: 500,
@@ -38,6 +40,7 @@ const defaultProps: Required<RippleProps> = {
 
 const Ripple: React.FC<RippleProps> = (props: RippleProps) => {
   const {
+      onPress,
       speed,
       initialDiameter,
       diameter,
@@ -99,7 +102,7 @@ const Ripple: React.FC<RippleProps> = (props: RippleProps) => {
   }, [speed, initialDiameter, duration, diameter, rippleCount]);
 
   return (
-    <View style={[styles.container, style]}>
+    <TouchableOpacity style={[styles.container, style]} onPress={onPress}>
       {started && (
         <View style={{ width: diameter, height: diameter }}>
           {ripples.map((ripple: RippleItem) => (
@@ -122,7 +125,7 @@ const Ripple: React.FC<RippleProps> = (props: RippleProps) => {
           ))}
         </View>
       )}
-    </View>
+    </TouchableOpacity>
   );
 };
 
