@@ -1,0 +1,42 @@
+{
+  "name": "react-native-auto-ripple",
+  "version": "1.0.0",
+  "description": "A React Native library that provides automatic ripple animation effects.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "ripple",
+    "animation",
+    "auto",
+    "ui", 
+    "react"
+  ],
+  "author": "eggmun98",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eggmun98/react-native-auto-ripple"
+  },
+  "bugs": {
+    "url": "https://github.com/eggmun98/react-native-auto-ripple/issues"
+  },
+  "homepage": "https://github.com/eggmun98/react-native-auto-ripple#readme",
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-native": ">=0.60.0"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-native": "^0.73.0",
+    "typescript": "^5.7.3"
+  }
+}
